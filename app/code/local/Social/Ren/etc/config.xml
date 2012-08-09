@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<config>
+      <modules>
+        <Social_Ren>
+          <version>0.1.0</version>
+        </Social_Ren>
+      </modules>
+	  <frontend>
+      <routers>
+        <ren>
+          <use>standard</use>
+         <args>
+           <module>Social_Ren</module>
+           <frontName>ren</frontName>
+         </args>
+        </ren>
+      </routers>
+	  <layout>
+          <updates>
+              <ren>
+                  <file>ren.xml</file>
+              </ren>
+          </updates>
+      </layout>
+    </frontend>
+   <global>
+
+   
+   
+      <helpers>
+       <ren>
+           <class>Social_Ren_Helper</class>
+       </ren>
+      </helpers>   
+
+	  <blocks><ren><class>Social_Ren_Block</class></ren></blocks>
+					 <models>
+					<ren>
+						<class>Social_Ren_Model</class>
+						<resourceModel>ren_mysql4</resourceModel>
+					</ren>
+					<ren_mysql4>
+						<class>Social_Ren_Model_Mysql4</class>
+						<entities>
+							<client>
+								<table>tablename</table>
+							</client>
+						</entities>
+					</ren_mysql4>
+
+				</models>
+				   <resources>
+					<ren_setup>
+						<setup>
+							<module>Social_Ren</module>
+						</setup>
+						<connection>
+							<use>core_setup</use>
+						</connection>
+					</ren_setup>
+					<ren_write>
+						<connection>
+							<use>core_write</use>
+						</connection>
+					</ren_write>
+					<ren_read>
+						<connection>
+							<use>core_read</use>
+						</connection>
+					</ren_read>
+					
+				</resources>
+			 
+   </global> 
+   
+
+</config> 
